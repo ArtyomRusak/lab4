@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Data.Entity;
 using Questionnaire.Core;
+using Questionnaire.Core.Entities;
 using Questionnaire.Core.Exceptions;
+using Questionnaire.Core.InterfaceRepository;
+using Questionnaire.EFData.Repositories;
 
 namespace Questionnaire.EFData
 {
@@ -12,7 +15,9 @@ namespace Questionnaire.EFData
         private bool _disposed;
         private bool _isTransactionActive;
         private readonly DbContext _context;
-        private DbContextTransaction _transaction;
+        private readonly DbContextTransaction _transaction;
+        private IRepository<Respondent, int> _respondentRepository;
+        private IRepository<Question, int> _questionRepository; 
 
         #endregion
 
@@ -86,6 +91,20 @@ namespace Questionnaire.EFData
         public void PreSave()
         {
             _context.SaveChanges();
+        }
+
+        #endregion
+
+        #region Implementation of IRepositoryFactory
+
+        public IRepository<Respondent, int> GetRespondentRepository()
+        {
+            return _respondentRepository ?? (_respondentRepository = new Repository<Respondent, int>(_context));
+        }
+
+        public IRepository<Question, int> GetQuestionRepository()
+        {
+            return _questionRepository ?? (_questionRepository = new Repository<Question, int>(_context));
         }
 
         #endregion

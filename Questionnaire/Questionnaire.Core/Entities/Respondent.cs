@@ -8,6 +8,8 @@ namespace Questionnaire.Core.Entities
 {
     public class Respondent : Entity<int>
     {
-
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Patronymic { get; set; }
     }
 }

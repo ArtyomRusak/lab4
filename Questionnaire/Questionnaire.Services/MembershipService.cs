@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AR.EPAM.Infrastructure.Guard;
 using Questionnaire.Core;
+using Questionnaire.Core.Entities;
 
 namespace Questionnaire.Services
 {
@@ -30,5 +31,10 @@ namespace Questionnaire.Services
         }
 
         #endregion
+
+        public Respondent CreateRespondent(string name, string surname, string patronymic)
+        {
+            return null;
+        }
     }
 }
