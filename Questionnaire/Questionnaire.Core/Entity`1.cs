@@ -1,4 +1,4 @@
-﻿namespace Questionnaire.Core.Entities
+﻿namespace Questionnaire.Core
 {
     public class Entity<TKey> : Entity
     {

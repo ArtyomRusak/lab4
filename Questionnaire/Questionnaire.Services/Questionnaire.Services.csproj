@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AR.EPAM.Infrastructure">
+      <HintPath>..\..\..\GUARD LIBRARY\AR.EPAM.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +43,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\ServiceException.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="MembershipService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Questionnaire.Core\Questionnaire.Core.csproj">
+      <Project>{8efde075-cb0c-4d79-82c2-a9bede6ce83f}</Project>
+      <Name>Questionnaire.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Questionnaire.EFData\Questionnaire.EFData.csproj">
+      <Project>{2955e70b-fbfa-42b6-8de3-bc6e62cba79d}</Project>
+      <Name>Questionnaire.EFData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Questionnaire.Infrastructure\Questionnaire.Infrastructure.csproj">
+      <Project>{9e1e4288-0759-4113-baaf-40e09173cbcb}</Project>
+      <Name>Questionnaire.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

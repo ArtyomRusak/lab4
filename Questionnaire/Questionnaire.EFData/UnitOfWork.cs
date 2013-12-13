@@ -32,6 +32,19 @@ namespace Questionnaire.EFData
 
         public void Dispose()
         {
+            if (_isTransactionActive)
+            {
+                try
+                {
+                    _context.SaveChanges();
+                    _transaction.Commit();
+                }
+                catch (Exception e)
+                {
+                    _transaction.Rollback();
+                    throw new RepositoryException(e);
+                }
+            }
             if (!_disposed)
             {
                 _context.Dispose();
@@ -40,6 +53,7 @@ namespace Questionnaire.EFData
         }
 
         #endregion
+
 
         #region Implementation of IUnitOfWork
 
@@ -69,19 +83,9 @@ namespace Questionnaire.EFData
             }
         }
 
-        #endregion
-
-        #region [UnitOfWork's members]
-
-        public bool SetNewTransaction()
+        public void PreSave()
         {
-            if (!_isTransactionActive && !_disposed)
-            {
-                _transaction = _context.Database.BeginTransaction();
-                _isTransactionActive = true;
-                return true;
-            }
-            return false;
+            _context.SaveChanges();
         }
 
         #endregion

@@ -7,5 +7,7 @@ namespace Questionnaire.Core
         void Commit();
 
         void Rollback();
+
+        void PreSave();
     }
 }
