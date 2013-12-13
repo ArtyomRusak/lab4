@@ -13,7 +13,7 @@ namespace Questionnaire.Services
     {
         #region [Private members]
 
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IRepositoryFactory _factoryOfRepositories;
 
         #endregion
@@ -34,7 +34,23 @@ namespace Questionnaire.Services
 
         public Respondent CreateRespondent(string name, string surname, string patronymic)
         {
-            return null;
+            var respondent = new Respondent
+            {
+                Name = name,
+                Surname = surname,
+                Patronymic = patronymic
+            };
+
+            var respondentRepository = _factoryOfRepositories.GetRespondentRepository();
+            respondentRepository.Create(respondent);
+            _unitOfWork.PreSave();
+            return respondent;
+        }
+
+        public void RemoveRespondent(Respondent respondent)
+        {
+            var respondentRepository = _factoryOfRepositories.GetRespondentRepository();
+            respondentRepository.Remove(respondent);
         }
     }
 }
