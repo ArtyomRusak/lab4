@@ -47,7 +47,6 @@ namespace Questionnaire.WebUI.Controllers
                     unitOfWork.Dispose();
                     throw;
                 }
-                throw new Exception("Try");
                 return RedirectToAction("Congratulations", new { id = respondent.Name });
             }
             else
