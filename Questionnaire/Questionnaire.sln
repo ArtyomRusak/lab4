@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.EFData", "Que
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.WebUI", "Questionnaire.WebUI\Questionnaire.WebUI.csproj", "{87A6CEC0-ED66-4E86-A41C-1600A6F04A0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questionnaire.WebFormsUI", "Questionnaire.WebFormsUI\Questionnaire.WebFormsUI.csproj", "{5241FCA4-51E8-4E1F-9274-02F068B879FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{87A6CEC0-ED66-4E86-A41C-1600A6F04A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87A6CEC0-ED66-4E86-A41C-1600A6F04A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87A6CEC0-ED66-4E86-A41C-1600A6F04A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5241FCA4-51E8-4E1F-9274-02F068B879FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5241FCA4-51E8-4E1F-9274-02F068B879FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5241FCA4-51E8-4E1F-9274-02F068B879FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5241FCA4-51E8-4E1F-9274-02F068B879FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
