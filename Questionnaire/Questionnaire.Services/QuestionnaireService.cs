@@ -32,7 +32,7 @@ namespace Questionnaire.Services
 
         #endregion
 
-        public Question CreateQuestions(int age, string hobbies, string seasonsOfTheYear, string petAnimals, string subjects, bool like)
+        public Question CreateQuestions(int age, string hobbies, string seasonsOfTheYear, string petAnimals, string subjects, bool like, int respondentId)
         {
             var question = new Question
             {
@@ -41,7 +41,8 @@ namespace Questionnaire.Services
                 PetAnimals = petAnimals,
                 SeasonsOfTheYear = seasonsOfTheYear,
                 Subjects = subjects,
-                Like = like
+                Like = like,
+                RespondentId = respondentId
             };
 
             var questionRepository = _factoryOfRepositories.GetQuestionRepository();

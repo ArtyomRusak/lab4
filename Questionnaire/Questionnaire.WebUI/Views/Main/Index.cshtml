@@ -1,0 +1,108 @@
+﻿@using System.Web.Mvc.Html
+@model Questionnaire.WebUI.Models.QuestionRespondentViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Set your initials.</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div>
+            @Html.LabelFor(model => model.RespondentViewModel.Name)
+            <div>
+                @Html.EditorFor(model => model.RespondentViewModel.Name)
+                @Html.ValidationMessageFor(model => model.RespondentViewModel.Name)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.RespondentViewModel.Surname)
+            <div>
+                @Html.EditorFor(model => model.RespondentViewModel.Surname)
+                @Html.ValidationMessageFor(model => model.RespondentViewModel.Surname)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.RespondentViewModel.Patronymic)
+            <div>
+                @Html.EditorFor(model => model.RespondentViewModel.Patronymic)
+                @Html.ValidationMessageFor(model => model.RespondentViewModel.Patronymic)
+            </div>
+        </div>
+        <p />
+        <h4>Questions</h4>
+        <hr />
+
+        <div>
+            @Html.LabelFor(model => model.QuestionViewModel.Age)
+            <div>
+                @Html.EditorFor(model => model.QuestionViewModel.Age)
+                @Html.ValidationMessageFor(model => model.QuestionViewModel.Age)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.QuestionViewModel.PetAnimals)
+            <div>
+                @Html.TextAreaFor(model => model.QuestionViewModel.PetAnimals, new { rows = 5, cols = 40 })
+                @Html.ValidationMessageFor(model => model.QuestionViewModel.PetAnimals)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.QuestionViewModel.SeasonsOfTheYear)
+            <div>
+                @Html.TextAreaFor(model => model.QuestionViewModel.SeasonsOfTheYear, new { rows = 5, cols = 40 })
+                @Html.ValidationMessageFor(model => model.QuestionViewModel.SeasonsOfTheYear)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.QuestionViewModel.Subjects)
+            <div>
+                @Html.TextAreaFor(model => model.QuestionViewModel.Subjects, new { rows = 5, cols = 40 })
+                @Html.ValidationMessageFor(model => model.QuestionViewModel.Subjects)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.QuestionViewModel.Hobbies)
+            <div>
+                @Html.TextAreaFor(model => model.QuestionViewModel.Hobbies, new { rows = 5, cols = 40 })
+                @Html.ValidationMessageFor(model => model.QuestionViewModel.Hobbies)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.QuestionViewModel.Like)
+            <div>
+                @Html.CheckBoxFor(model => model.QuestionViewModel.Like)
+                @Html.ValidationMessageFor(model => model.QuestionViewModel.Like)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

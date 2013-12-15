@@ -42,6 +42,10 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AR.EPAM.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GUARD LIBRARY\AR.EPAM.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -107,7 +111,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="packages.config" />
+    <Content Include="Scripts\modernizr-2.7.1.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Main\Congratulations.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,15 +152,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BootstrapBundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mappings\IMapper.cs" />
+    <Compile Include="Models\Mappings\QuestionMapper.cs" />
+    <Compile Include="Models\Mappings\RespondentMapper.cs" />
+    <Compile Include="Models\QuestionRespondentViewModel.cs" />
+    <Compile Include="Models\QuestionViewModel.cs" />
+    <Compile Include="Models\RespondentViewModel.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\Questionnaire.Core\Questionnaire.Core.csproj">
+      <Project>{8efde075-cb0c-4d79-82c2-a9bede6ce83f}</Project>
+      <Name>Questionnaire.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Questionnaire.EFData\Questionnaire.EFData.csproj">
+      <Project>{2955e70b-fbfa-42b6-8de3-bc6e62cba79d}</Project>
+      <Name>Questionnaire.EFData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Questionnaire.Infrastructure\Questionnaire.Infrastructure.csproj">
+      <Project>{9e1e4288-0759-4113-baaf-40e09173cbcb}</Project>
+      <Name>Questionnaire.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Questionnaire.Services\Questionnaire.Services.csproj">
+      <Project>{ca2c660a-a071-46be-9af5-c5324348463c}</Project>
+      <Name>Questionnaire.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

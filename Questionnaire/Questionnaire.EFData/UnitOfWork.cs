@@ -28,6 +28,7 @@ namespace Questionnaire.EFData
         {
             _context = context;
             _transaction = _context.Database.BeginTransaction();
+            _isTransactionActive = true;
         }
 
         #endregion
@@ -43,10 +44,12 @@ namespace Questionnaire.EFData
                 {
                     _context.SaveChanges();
                     _transaction.Commit();
+                    _isTransactionActive = false;
                 }
                 catch (Exception e)
                 {
                     _transaction.Rollback();
+                    _isTransactionActive = false;
                     throw new RepositoryException(e);
                 }
             }
@@ -76,6 +79,7 @@ namespace Questionnaire.EFData
             catch (Exception e)
             {
                 _transaction.Rollback();
+                _isTransactionActive = false;
                 throw new RepositoryException(e.Message);
             }
         }
@@ -85,6 +89,7 @@ namespace Questionnaire.EFData
             if (_isTransactionActive && !_disposed)
             {
                 _transaction.Rollback();
+                _isTransactionActive = false;
             }
         }
 
