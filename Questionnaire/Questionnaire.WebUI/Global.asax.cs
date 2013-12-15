@@ -20,6 +20,7 @@ namespace Questionnaire.WebUI
                 new {controller = "Main", action = "Index", id = UrlParameter.Optional});
 
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -35,11 +36,6 @@ namespace Questionnaire.WebUI
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Application_Error(object sender, EventArgs e)
-        {
-            
         }
 
         protected void Session_End(object sender, EventArgs e)

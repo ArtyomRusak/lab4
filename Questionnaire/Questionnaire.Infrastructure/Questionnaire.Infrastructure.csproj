@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AR.EPAM.Infrastructure">
-      <HintPath>..\..\..\GUARD LIBRARY\AR.EPAM.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Guard\Guard.ExceptionThrowing.cs" />
+    <Compile Include="Guard\Guard.NullReference.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Guard\Exceptions\ExceptionBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
