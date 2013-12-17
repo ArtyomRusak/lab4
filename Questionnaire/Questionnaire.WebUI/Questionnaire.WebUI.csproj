@@ -157,9 +157,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Mappings\IMapper.cs" />
-    <Compile Include="Models\Mappings\QuestionMapper.cs" />
-    <Compile Include="Models\Mappings\RespondentMapper.cs" />
+    <Compile Include="Mappings\IMapper.cs" />
+    <Compile Include="Mappings\QuestionMapper.cs" />
+    <Compile Include="Mappings\RespondentMapper.cs" />
     <Compile Include="Models\QuestionRespondentViewModel.cs" />
     <Compile Include="Models\QuestionViewModel.cs" />
     <Compile Include="Models\RespondentViewModel.cs" />

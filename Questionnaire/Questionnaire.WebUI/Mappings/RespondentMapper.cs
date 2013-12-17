@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AR.EPAM.Infrastructure.Guard;
+﻿using AR.EPAM.Infrastructure.Guard;
 using Questionnaire.Core.Entities;
+using Questionnaire.WebUI.Models;
 
-namespace Questionnaire.WebUI.Models.Mappings
+namespace Questionnaire.WebUI.Mappings
 {
     public class RespondentMapper : IMapper<Respondent, RespondentViewModel>
     {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Questionnaire.Core;
-using Questionnaire.Core.Entities;
+﻿using Questionnaire.Core;
+using Questionnaire.WebUI.Models;
 
-namespace Questionnaire.WebUI.Models.Mappings
+namespace Questionnaire.WebUI.Mappings
 {
     public interface IMapper<TEntity, TViewModel>
         where TEntity : Entity

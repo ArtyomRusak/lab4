@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Questionnaire.Core.Entities;
+﻿using Questionnaire.Core.Entities;
+using Questionnaire.WebUI.Models;
 
-namespace Questionnaire.WebUI.Models.Mappings
+namespace Questionnaire.WebUI.Mappings
 {
     public class QuestionMapper : IMapper<Question, QuestionViewModel>
     {
